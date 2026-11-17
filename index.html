@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Debosmita Jana | Debug My Portfolio</title>
+  <meta name="description" content="Debosmita Jana's portfolio shipped with 6 bugs. Squash them to reveal it. B.Tech CSE, Shoolini University." />
+  <meta name="author" content="Debosmita Jana" />
+  <meta property="og:title" content="Debug My Portfolio: Debosmita Jana" />
+  <meta property="og:description" content="This portfolio shipped with 6 bugs. Can you fix them?" />
+  <meta property="og:image" content="assets/profile.jpg" />
+  <meta name="theme-color" content="#0b0d12" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="hunting">
+
+  <!-- ============ Fake build screen ============ -->
+  <div class="boot" id="boot" aria-hidden="true">
+    <pre id="bootLog"></pre>
+    <p class="boot-skip">click anywhere to skip</p>
+  </div>
+
+  <!-- ============ IDE-style top bar ============ -->
+  <header class="ide-bar">
+    <a href="#hero" class="logo">debosmita<span>.dev</span></a>
+    <nav class="tabs" aria-label="Sections">
+      <a href="#about">about.md</a>
+      <a href="#skills">skills.json</a>
+      <a href="#journey">journey.log</a>
+      <a href="#projects">projects/</a>
+      <a href="#contact">contact.sh</a>
+    </nav>
+    <div class="status">
+      <span class="build fail" id="buildPill">✖ build failing</span>
+      <span class="bug-count" id="bugCount" title="Bugs left">🐞 6</span>
+      <button class="autofix" id="autoFix" title="Fix every bug for me">⚡ Auto-fix</button>
+      <button class="icon" id="soundBtn" aria-label="Toggle sound" title="Sound">🔊</button>
+    </div>
+    <div class="build-progress"><i id="buildBar"></i></div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="sec broken" id="hero" data-bug="hero">
+      <div class="err" role="status"><b>Uncaught TypeError:</b> name.render is not a function <span>at hero.js:12</span></div>
+      <div class="hero-grid">
+        <div class="hero-text">
+          <p class="mono hello">// hello world, I'm</p>
+          <h1 id="heroName" data-text="Debosmita Jana">Debosmita Jana</h1>
+          <p class="role">B.Tech CSE · 2nd Year · <a href="https://shoolini.onlinedegreeadmission.in/" target="_blank" rel="noopener">Shoolini University</a></p>
+          <p class="tagline">I write code, break things, and fix them. This portfolio shipped with <b class="hl">6 bugs</b>. Help me squash them.</p>
+          <div class="how">
+            <span>🖱️ Click / tap the crawling bugs</span>
+            <span>⚡ or hit <b>Auto-fix</b> in the top bar</span>
+          </div>
+        </div>
+        <div class="photo-wrap">
+          <div class="photo"><img src="assets/profile.jpg" alt="Photo of Debosmita Jana" width="380" height="380" /></div>
+          <span class="sticker s1">Haldia → Solan</span>
+          <span class="sticker s2">open to internships</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="sec broken" id="about" data-bug="about">
+      <div class="err"><b>CSSError:</b> line-height: -1 is not a valid value <span>at about.css:7</span></div>
+      <h2 class="sec-title"><span class="mono">01</span> about.md</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Hi! I'm <b>Debosmita</b>, from <b>Haldia, West Bengal</b>. I'm in the <b>2nd year of B.Tech Computer Science &amp; Engineering at Shoolini University</b>, Himachal Pradesh, which I joined through lateral entry after my diploma.</p>
+          <p>During my <b>Diploma in Computer Science &amp; Technology</b> I learnt C, C++ and Python, and built projects like a LAN-based examination system, a database + website, and Power BI dashboards.</p>
+          <p>Right now I'm focused on <b>web development</b> and <b>Data Structures &amp; Algorithms</b>. I'm eager to learn, adapt and contribute to team projects, and I'm open to internships.</p>
+        </div>
+        <ul class="facts">
+          <li><span>📍 from</span>Haldia, West Bengal</li>
+          <li><span>🏫 studying at</span>Shoolini University, Solan</li>
+          <li><span>🎓 currently</span>B.Tech CSE · 2nd year (lateral entry)</li>
+          <li><span>🗣️ speaks</span>English · Hindi · Bengali</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="sec broken" id="skills" data-bug="skills">
+      <div class="err"><b>RangeError:</b> skill level is NaN <span>at skills.json:1</span></div>
+      <h2 class="sec-title"><span class="mono">02</span> skills.json</h2>
+      <div class="skills" id="skillList"><!-- filled by JS --></div>
+    </section>
+
+    <!-- ============ JOURNEY ============ -->
+    <section class="sec broken" id="journey" data-bug="journey">
+      <div class="err"><b>LogicError:</b> timeline is not sorted <span>at journey.log:3</span></div>
+      <h2 class="sec-title"><span class="mono">03</span> journey.log</h2>
+      <ol class="timeline" id="timeline">
+        <li data-order="2" data-year="2023 – 2026">
+          <time>2023 – 2026</time>
+          <h3>Diploma in Computer Science &amp; Technology</h3>
+          <p class="org">Global Institute of Science &amp; Technology, Haldia</p>
+          <p>Learnt C, C++, Python, networking, databases and web design. Built a LAN-based exam system, a database + website, and Power BI dashboards.</p>
+        </li>
+        <li data-order="3" data-year="2023">
+          <time>2023</time>
+          <h3>Madhyamik (Class X)</h3>
+          <p class="org">DAV Public School, Haldia</p>
+          <p>Finished school and picked computer science as my path.</p>
+        </li>
+        <li data-order="1" data-year="2026 – now">
+          <time>2026 – now</time>
+          <h3>B.Tech, Computer Science &amp; Engineering</h3>
+          <p class="org">Shoolini University, Solan, Himachal Pradesh</p>
+          <p>Joined directly in the 2nd year (lateral entry). Studying core CS and building web projects like this one.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="sec broken" id="projects" data-bug="projects">
+      <div class="err"><b>LayoutError:</b> z-index war detected in .cards <span>at projects/index.css:42</span></div>
+      <h2 class="sec-title"><span class="mono">04</span> projects/</h2>
+      <div class="cards" id="cards"><!-- filled by JS --></div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="sec broken" id="contact" data-bug="contact">
+      <div class="err"><b>404:</b> contact details not found <span>at contact.sh:1</span></div>
+      <h2 class="sec-title"><span class="mono">05</span> contact.sh</h2>
+      <p class="contact-lead">Bugs fixed? Let's build something together.</p>
+      <div class="contact-grid">
+        <a class="c-card" id="cEmail" data-real="debosmitajana55@gmail.com" data-href="mailto:debosmitajana55@gmail.com"><span>📧 email</span><b>undefined@undefined</b></a>
+        <a class="c-card" id="cLinked" data-real="in/debosmita-jana" data-href="https://www.linkedin.com/in/debosmita-jana-bb4886383"><span>💼 linkedin</span><b>null</b></a>
+        <a class="c-card" id="cGit" data-real="debosmitajana55-droid" data-href="https://github.com/debosmitajana55-droid"><span>🐙 github</span><b>404</b></a>
+        <a class="c-card" id="cClassic" data-real="classic portfolio ↗" data-href="https://debosmitajana55-droid.github.io/portfolio/"><span>🌐 also see</span><b>NaN</b></a>
+      </div>
+    </section>
+
+    <!-- ============ DEPLOYED ============ -->
+    <section class="deployed" id="deployed" hidden>
+      <p class="mono">$ git push origin main</p>
+      <h2>✅ Build passing. Deployed. 🚀</h2>
+      <p>Thanks for debugging my portfolio! You fixed <b id="byYou">6</b> bugs yourself.</p>
+      <a class="btn" href="mailto:debosmitajana55@gmail.com?subject=Loved%20your%20debuggable%20portfolio!">Say hi to Debosmita →</a>
+    </section>
+  </main>
+
+  <!-- ============ Console / terminal ============ -->
+  <aside class="console" id="console">
+    <button class="console-head" id="consoleToggle" aria-expanded="true">
+      <span>▸ console</span><span class="console-hint">type <b>help</b></span>
+    </button>
+    <div class="console-body">
+      <div class="log" id="log" aria-live="polite"></div>
+      <form class="prompt" id="prompt" autocomplete="off">
+        <label for="cmd">guest@debosmita.dev:~$</label>
+        <input id="cmd" type="text" spellcheck="false" placeholder="help" />
+      </form>
+    </div>
+  </aside>
+
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <noscript><style>.sec.broken *{all:revert}</style></noscript>
+  <script src="js/main.js"></script>
+</body>
+</html>
